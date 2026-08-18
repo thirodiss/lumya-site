@@ -5,8 +5,8 @@ import { useState } from "react";
 const services = [
   {
     title: "Lumya Agency",
-    subtitle: "Gestão com presença, cuidado e direção.",
-    desc: "Acompanhamos creators, streamers e apresentadores digitais com estratégia, posicionamento e suporte para que cada história encontre espaço, voz e oportunidade.",
+    subtitle: "O núcleo estratégico do Ecossistema Lumya.",
+    desc: "A frente responsável por gestão, posicionamento, direcionamento estratégico, desenvolvimento de creators e conexão com oportunidades reais de crescimento.",
     img: "/lumya/servico-agency.png",
   },
   {
@@ -41,6 +41,62 @@ const courses = [
   "Como fechar publis",
 ];
 
+const stats = [
+  { number: "+100", label: "creators em desenvolvimento" },
+  { number: "+50", label: "horas de mentorias e treinamentos" },
+  { number: "+1M", label: "potencial de alcance em campanhas" },
+  { number: "4", label: "frentes: Agency, Academy, Podcast e Creators" },
+];
+
+const steps = [
+  {
+    title: "Você se inscreve",
+    desc: "Creators, streamers e parceiros contam sua história para a Lumya.",
+  },
+  {
+    title: "A gente entende seu momento",
+    desc: "Analisamos perfil, objetivos e potencial.",
+  },
+  {
+    title: "Criamos direção",
+    desc: "Posicionamento, conteúdo, lives, cursos e oportunidades.",
+  },
+  {
+    title: "Você cresce com estrutura",
+    desc: "Acompanhamento, comunidade e desenvolvimento.",
+  },
+];
+
+const partners = [
+  "TikTok LIVE",
+  "Instagram",
+  "YouTube",
+  "Spotify",
+  "Discord",
+  "Marcas Parceiras",
+];
+
+const stories = [
+  {
+    type: "Creator",
+    name: "A próxima história pode ser a sua",
+    tag: "Conteúdo • Presença • Comunidade",
+    desc: "A Lumya ajuda creators a transformarem vivência, autenticidade e comunicação em presença digital com direção.",
+  },
+  {
+    type: "Streamer",
+    name: "Toda voz merece oportunidade",
+    tag: "Lives • Audiência • Monetização",
+    desc: "Apoiamos streamers na construção de rotina, personagem, posicionamento e conexão com uma comunidade real.",
+  },
+  {
+    type: "Apresentador",
+    name: "Representatividade transforma futuros",
+    tag: "Podcast • Eventos • Campanhas",
+    desc: "Criamos espaço para histórias serem ouvidas, valorizadas e conectadas a marcas, projetos e novas oportunidades.",
+  },
+];
+
 const imageClass =
   "w-full rounded-[32px] object-cover shadow-[0_18px_55px_rgba(7,27,58,0.08)] transition duration-500 hover:scale-[1.02]";
 
@@ -58,12 +114,12 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2 md:px-8">
           <a href="#inicio" onClick={closeMenu}>
             <img
               src="/lumya/logo-lumya.png"
               alt="Lumya"
-              className="h-20 w-auto transition duration-300 hover:scale-[1.02] md:h-24"
+              className="h-14 w-auto transition duration-300 hover:scale-[1.02] md:h-16"
             />
           </a>
 
@@ -135,13 +191,12 @@ export default function HomePage() {
               Transformando histórias em potência
             </p>
 
-            <h1 className="mt-4 max-w-xl text-[38px] font-black leading-[1.03] tracking-[-0.04em] md:text-[52px]">
-              O mundo precisa ouvir histórias como a sua.
+            <h1 className="mt-4 max-w-xl text-[36px] font-black leading-[1.03] tracking-[-0.04em] md:text-[52px]">
+              Toda grande trajetória começa quando alguém acredita em você.
             </h1>
 
             <p className="mt-5 max-w-xl text-base leading-7 text-[#355070] md:text-lg md:leading-8">
-              A Lumya conecta creators, streamers e apresentadores PCD a oportunidades reais de crescimento,
-              visibilidade e impacto. Aqui, sua história não é detalhe. É potência.
+              Unimos gestão, capacitação, conteúdo, comunidade e oportunidades para creators, streamers e apresentadores que desejam transformar talento em carreira e representatividade em impacto.
             </p>
 
             <div className="mt-7 flex flex-wrap gap-3">
@@ -169,6 +224,109 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="bg-white py-10">
+        <div className="mx-auto grid max-w-7xl gap-4 px-6 md:grid-cols-4 md:px-8">
+          {stats.map((item) => (
+            <div
+              key={item.label}
+              className="group rounded-[30px] border border-[#e8eef9] bg-gradient-to-br from-white to-[#f3f8ff] p-8 shadow-[0_18px_45px_rgba(7,27,58,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_65px_rgba(35,120,255,0.14)]"
+            >
+              <p className="text-[54px] font-black leading-none tracking-[-0.06em] text-[#2378ff] transition duration-300 group-hover:scale-105">
+                {item.number}
+              </p>
+              <p className="mt-4 text-base font-black leading-6 text-[#071b3a]">
+                {item.label}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-[#f7faff] py-14">
+        <div className="mx-auto max-w-7xl px-6 md:px-8">
+          <div className="max-w-3xl">
+            <p className="text-xs font-black uppercase tracking-[0.32em] text-[#2378ff]">
+              Como funciona
+            </p>
+
+            <h2 className="mt-3 text-[30px] font-black leading-tight tracking-[-0.03em] md:text-[42px]">
+              Da história ao crescimento: a Lumya cria o caminho.
+            </h2>
+          </div>
+
+          <div className="mt-10 grid gap-5 md:grid-cols-4">
+            {steps.map((step, index) => (
+              <div key={step.title} className="relative">
+                <div className="rounded-[30px] border border-[#e8eef9] bg-white p-7 shadow-[0_18px_45px_rgba(7,27,58,0.05)] transition duration-300 hover:-translate-y-1">
+                  <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#2378ff] text-2xl font-black text-white">
+                    {["✍️", "🔎", "🚀", "🌟"][index]}
+                  </div>
+
+                  <p className="text-xs font-black uppercase tracking-[0.22em] text-[#2378ff]">
+                    Etapa {index + 1}
+                  </p>
+
+                  <h3 className="mt-3 text-xl font-black leading-tight">
+                    {step.title}
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-7 text-[#355070]">
+                    {step.desc}
+                  </p>
+                </div>
+
+                {index < steps.length - 1 && (
+                  <div className="absolute right-[-18px] top-1/2 hidden -translate-y-1/2 text-3xl font-black text-[#2378ff] md:block">
+                    →
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-12">
+        <div className="mx-auto max-w-7xl px-6 md:px-8">
+          <div className="rounded-[34px] border border-[#e8eef9] bg-[#071b3a] p-8 text-white shadow-[0_22px_70px_rgba(7,27,58,0.16)] md:p-10">
+            <p className="text-xs font-black uppercase tracking-[0.32em] text-[#7db4ff]">
+              Presença digital
+            </p>
+
+            <h2 className="mt-3 max-w-3xl text-[30px] font-black leading-tight tracking-[-0.03em] md:text-[42px]">
+              Um ecossistema preparado para conectar creators, marcas, plataformas e comunidades.
+            </h2>
+
+            <div className="mt-8 grid gap-3 sm:grid-cols-2 md:grid-cols-6">
+              {partners.map((partner, index) => (
+                <div
+                  key={partner}
+                  className="rounded-2xl border border-white/10 bg-white/10 px-4 py-5 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] transition duration-300 hover:-translate-y-1 hover:bg-white/15"
+                >
+    <div className="flex justify-center">
+  <img
+    src={[
+      "/lumya/icons/tiktok.svg",
+      "/lumya/icons/instagram.svg",
+      "/lumya/icons/youtube.svg",
+      "/lumya/icons/spotify.svg",
+      "/lumya/icons/discord.svg",
+      "/lumya/icons/partners.svg",
+    ][index]}
+    alt={partner}
+    className="h-10 w-10 object-contain"
+  />
+</div>
+                  <p className="mt-3 text-sm font-black text-white/90">
+                    {partner}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="quem-somos" className="py-12">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 md:grid-cols-[1.15fr_0.85fr] md:px-8">
           <img
@@ -188,7 +346,7 @@ export default function HomePage() {
 
             <div className="mt-5 space-y-4 text-base leading-7 text-[#355070] md:text-lg md:leading-8">
               <p>
-                A Lumya apoia creators PCD que desejam crescer nas plataformas digitais através
+                A Lumya apoia creators com ampla acessibilidade que desejam crescer nas plataformas digitais através
                 de conteúdo, lives, entretenimento e conexão humana.
               </p>
               <p>
@@ -198,7 +356,14 @@ export default function HomePage() {
               <p className="font-bold text-[#071b3a]">
                 Quando existe oportunidade, histórias comuns se tornam extraordinárias.
               </p>
-            </div>
+
+              <div className="mt-6 rounded-[24px] bg-gradient-to-r from-[#2378ff] to-[#1ea7e9] p-6 text-white shadow-[0_18px_45px_rgba(35,120,255,0.25)]">
+                <p className="text-lg font-black leading-8">
+                  Nossa missão não é apenas gerenciar creators.
+                  É construir um movimento capaz de abrir portas para milhares de histórias que ainda não tiveram a oportunidade de ser vistas.
+                </p>
+              </div>
+                        </div>
           </div>
         </div>
       </section>
@@ -337,6 +502,72 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="bg-white py-14">
+  <div className="mx-auto max-w-7xl px-6 md:px-8">
+    <div className="grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-end">
+      <div>
+        <p className="text-xs font-black uppercase tracking-[0.32em] text-[#2378ff]">
+          Histórias que inspiram
+        </p>
+
+        <h2 className="mt-3 text-[30px] font-black leading-tight tracking-[-0.03em] md:text-[42px]">
+          A Lumya existe para transformar potencial em oportunidade.
+        </h2>
+      </div>
+
+      <p className="text-base leading-7 text-[#355070] md:text-lg md:leading-8">
+        Cada pessoa chega com uma história, um sonho e uma forma única de se comunicar.
+        Nosso papel é criar direção, estrutura e visibilidade para que essa história encontre público.
+      </p>
+    </div>
+
+    <div className="mt-10 grid gap-6 md:grid-cols-3">
+      {stories.map((story, index) => (
+        <article
+          key={story.name}
+          className="group overflow-hidden rounded-[32px] border border-[#e8eef9] bg-[#f8fbff] shadow-[0_18px_45px_rgba(7,27,58,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_65px_rgba(35,120,255,0.12)]"
+        >
+          <div className="relative flex h-[180px] items-center justify-center overflow-hidden bg-gradient-to-br from-[#071b3a] via-[#123f78] to-[#2378ff] text-white">
+            <div className="absolute left-[-40px] top-[-40px] h-32 w-32 rounded-full bg-white/10 blur-2xl" />
+            <div className="absolute bottom-[-50px] right-[-30px] h-40 w-40 rounded-full bg-[#1ea7e9]/30 blur-2xl" />
+
+            <div className="relative text-center">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-3xl bg-white/15 text-3xl shadow-[inset_0_1px_0_rgba(255,255,255,0.16)]">
+                {["✨", "🎥", "🎙️"][index]}
+              </div>
+
+              <p className="mt-4 text-xs font-black uppercase tracking-[0.28em] text-white/75">
+                {story.type}
+              </p>
+            </div>
+          </div>
+
+          <div className="p-7">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-[#2378ff]">
+              {story.tag}
+            </p>
+
+            <h3 className="mt-3 text-2xl font-black leading-tight text-[#071b3a]">
+              {story.name}
+            </h3>
+
+            <p className="mt-4 text-base leading-7 text-[#355070]">
+              {story.desc}
+            </p>
+
+            <a
+              href="#contato"
+              className="mt-6 inline-flex rounded-full border border-[#dce6f6] bg-white px-5 py-3 text-sm font-black text-[#071b3a] transition hover:border-[#2378ff] hover:text-[#2378ff]"
+            >
+              Quero contar minha história
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
       <section id="podcast" className="bg-[#f7faff] py-12">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 md:grid-cols-[0.85fr_1.15fr] md:px-8">
           <div>
@@ -362,113 +593,89 @@ export default function HomePage() {
         </div>
       </section>
 
-<section className="bg-[#f7faff] py-12">
-  <div className="mx-auto max-w-7xl px-6 md:px-8">
+      <section className="bg-[#f7faff] py-14">
+        <div className="mx-auto max-w-7xl px-6 md:px-8">
+          <div className="grid gap-10 md:grid-cols-[0.82fr_1.18fr] md:items-center">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[0.32em] text-[#2378ff]">
+                Quem está por trás
+              </p>
 
-    <div className="max-w-3xl">
-      <p className="text-xs font-black uppercase tracking-[0.32em] text-[#2378ff]">
-        Quem está por trás
-      </p>
+              <h2 className="mt-3 text-[30px] font-black leading-tight tracking-[-0.03em] md:text-[42px]">
+                Visão, propósito e execução para transformar histórias em potência.
+              </h2>
 
-      <h2 className="mt-3 text-[30px] font-black leading-tight tracking-[-0.03em] md:text-[42px]">
-        Pessoas reais construindo um movimento real.
-      </h2>
+              <p className="mt-5 text-base leading-7 text-[#355070] md:text-lg md:leading-8">
+                A Lumya nasce com a missão de ampliar oportunidades, fortalecer talentos e criar
+                caminhos reais para creators que desejam crescer com estrutura, identidade e propósito.
+              </p>
 
-      <p className="mt-5 text-base leading-7 text-[#355070] md:text-lg md:leading-8">
-        A Lumya nasceu da vontade de criar oportunidades, inclusão e visibilidade
-        para creators que merecem ser vistos, ouvidos e valorizados.
-      </p>
-    </div>
+              <div className="mt-6 rounded-[26px] border border-[#dbe9ff] bg-white p-6 shadow-[0_14px_35px_rgba(7,27,58,0.05)]">
+                <p className="text-sm font-black uppercase tracking-[0.2em] text-[#2378ff]">
+                  Direção Lumya
+                </p>
+                <p className="mt-3 text-base leading-7 text-[#355070]">
+                  Estratégia, posicionamento, tecnologia e comunidade reunidos em um ecossistema
+                  criado para transformar potencial em oportunidade real.
+                </p>
+              </div>
+            </div>
 
-    <div className="mt-10 grid gap-6 md:grid-cols-2">
+            <article className="overflow-hidden rounded-[34px] border border-[#e8eef9] bg-white shadow-[0_20px_65px_rgba(7,27,58,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_80px_rgba(35,120,255,0.13)]">
+              <div className="grid md:grid-cols-[0.72fr_1.28fr] md:items-stretch">
+                <div className="flex items-end justify-center bg-gradient-to-br from-[#eef6ff] via-[#f8fbff] to-white px-6 pt-6">
+                  <img
+                    src="/lumya/founder-02.png"
+                    alt="Thi_rodiss, fundador da Lumya"
+                    className="h-[320px] w-full object-contain object-bottom"
+                  />
+                </div>
 
-      <article className="overflow-hidden rounded-[32px] border border-[#e8eef9] bg-white shadow-[0_18px_55px_rgba(7,27,58,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_65px_rgba(7,27,58,0.10)]">
+                <div className="p-7 md:p-9">
+                  <p className="text-xs font-black uppercase tracking-[0.25em] text-[#2378ff]">
+                    Thi_rodiss
+                  </p>
 
-        <img
-          src="/lumya/founder-01.png"
-          alt="Aline"
-          className="h-[420px] w-full object-cover"
-        />
+                  <h3 className="mt-2 text-[30px] font-black leading-tight md:text-[34px]">
+                    Fundador da Lumya.
+                  </h3>
 
-        <div className="p-7">
-          <p className="text-xs font-black uppercase tracking-[0.25em] text-[#2378ff]">
-            Criadora
-          </p>
+                  <p className="mt-4 text-base leading-7 text-[#355070]">
+                    Responsável pela visão estratégica e pela construção do ecossistema Lumya,
+                    conectando comunicação, tecnologia, desenvolvimento de creators e oportunidades
+                    para transformar boas histórias em projetos capazes de crescer e gerar impacto.
+                  </p>
 
-          <h3 className="mt-2 text-[30px] font-black leading-tight">
-            A mente por trás da Lumya.
-          </h3>
+                  <p className="mt-4 text-base font-bold leading-7 text-[#071b3a]">
+                    A ideia é simples: talento precisa de oportunidade, mas também precisa de direção,
+                    estrutura e alguém disposto a acreditar antes de todo mundo.
+                  </p>
 
-          <p className="mt-4 text-base leading-7 text-[#355070]">
-            Responsável pela estrutura, direção e construção do ecossistema da Lumya,
-            conectando propósito, acolhimento e oportunidade em um movimento feito para transformar histórias.
-          </p>
+                  <div className="mt-7 flex flex-wrap gap-3">
+                    <a
+                      href="https://www.instagram.com/thi_rodiss/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-full border border-[#dce6f6] bg-white px-5 py-3 text-sm font-black transition hover:border-[#2378ff] hover:text-[#2378ff]"
+                    >
+                      Instagram
+                    </a>
 
-          <div className="mt-6 flex flex-wrap gap-3">
-            <a
-              href="https://www.instagram.com/alinemendes/"
-              target="_blank"
-              className="rounded-full border border-[#dce6f6] bg-white px-5 py-3 text-sm font-black transition hover:border-[#2378ff]"
-            >
-              Instagram
-            </a>
-
-            <a
-              href="https://www.tiktok.com/@ali.nneee?lang=pt-BR"
-              target="_blank"
-              className="rounded-full bg-[#2378ff] px-5 py-3 text-sm font-black text-white transition hover:bg-[#1667e8]"
-            >
-              TikTok
-            </a>
+                    <a
+                      href="https://www.tiktok.com/@thi_rodiss?lang=pt-BR"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-full bg-[#2378ff] px-5 py-3 text-sm font-black text-white shadow-[0_10px_25px_rgba(35,120,255,0.22)] transition hover:-translate-y-[1px] hover:bg-[#1667e8]"
+                    >
+                      TikTok
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
-      </article>
-
-      <article className="overflow-hidden rounded-[32px] border border-[#e8eef9] bg-white shadow-[0_18px_55px_rgba(7,27,58,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_65px_rgba(7,27,58,0.10)]">
-
-        <img
-          src="/lumya/founder-02.png"
-          alt="Thi_rodiss"
-          className="h-[420px] w-full object-cover"
-        />
-
-        <div className="p-7">
-          <p className="text-xs font-black uppercase tracking-[0.25em] text-[#2378ff]">
-            Thi_rodiss
-          </p>
-
-          <h3 className="mt-2 text-[30px] font-black leading-tight">
-            Creator e idealizador do movimento.
-          </h3>
-
-          <p className="mt-4 text-base leading-7 text-[#355070]">
-            Apaixonado por comunicação, creators e transformação digital,
-            ajuda a construir uma comunidade onde pessoas reais possam crescer com apoio, visibilidade e propósito.
-          </p>
-
-          <div className="mt-6 flex flex-wrap gap-3">
-            <a
-              href="https://www.instagram.com/thi_rodiss/"
-              target="_blank"
-              className="rounded-full border border-[#dce6f6] bg-white px-5 py-3 text-sm font-black transition hover:border-[#2378ff]"
-            >
-              Instagram
-            </a>
-
-            <a
-              href="https://www.tiktok.com/@thi_rodiss?lang=pt-BR"
-              target="_blank"
-              className="rounded-full bg-[#2378ff] px-5 py-3 text-sm font-black text-white transition hover:bg-[#1667e8]"
-            >
-              TikTok
-            </a>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
+      </section>
 
       <section id="contato" className="py-12">
         <div className="mx-auto max-w-7xl px-6 md:px-8">
